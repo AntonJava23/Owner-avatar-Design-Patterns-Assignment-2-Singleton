@@ -1,16 +1,23 @@
 package se.yrgo;
 
-public class RootUser1 {
+public class RootUserPSFIF {
     private int UID = 0;
     private int GID = 0;
     private String userName = "root";
     private String name = "Super user";
     private String home = "/root";
     private String shell = "/bin/sh";
-    public RootUser1(){
+
+    public static final RootUserPSFIF instance = new RootUserPSFIF();
+
+    private RootUserPSFIF() {}
+
+    public int getUID() {
+        return UID;
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         return new StringBuilder(userName)
                 .append("(").append(name).append(")")
                 .append(" ").append(UID).append(":").append(GID)
